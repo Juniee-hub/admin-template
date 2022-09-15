@@ -3,11 +3,11 @@
 ## Available Scripts
 
 
-### `yarn start`
+### `yarn dev`
 
 ### `yarn test`
 
-### `yarn run build`
+### `yarn start`
 
 `build` 폴더로 생성.
 
