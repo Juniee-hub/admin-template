@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react'
+import { useRouter }       from 'next/router'
 
-import { adminAuthStore }  from '../store/auth'
-import { useNavigate }     from 'react-router-dom'
-import { setLocalStorage } from '../service/customFunction'
+import { adminAuthStore }  from '../../store/adminAuth'
+import { setLocalStorage } from '../../service/customFunction'
 
 const AdminLogin = () => {
 
     const isLogin = adminAuthStore((state) => state.isLogin)
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
+    const router = useRouter()
     useEffect(() => {
         if (isLogin === true) {
-            setLocalStorage('adminIsLogin',true)
-            navigate('..')
+            setLocalStorage('adminIsLogin', true)
+            // navigate('..')
+            router.push('/webmaster')
         }
     })
 
