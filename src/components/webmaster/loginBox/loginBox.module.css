@@ -1,0 +1,55 @@
+@value makerWhite,boxDark,backDark,textDark,inputDark,inputDark,buttonBlue from '../../../common/colors.css';
+@value defaultRadius from '../../../common/variable.css';
+@value mediaQuery from '../../../common/size.css';
+.wrap{
+    background-color: backDark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: boxDark;
+    color:makerWhite;
+    border-radius: defaultRadius;
+    width: 30rem;
+    padding:2rem 2rem;
+}
+
+.box form{
+    display: flex;
+    flex-direction: column;
+    gap: .7em;
+}
+
+.box form .alert{
+    color:tomato;
+}
+
+.box input{
+    background-color: inputDark;
+    border: 1px solid inputDark;
+    color: textDark;
+    border-radius: defaultRadius;
+    padding: .7rem 1.7rem;
+    font-size: 1rem;
+}
+
+.box form button{
+    color: makerWhite;
+    background-color: buttonBlue;
+    border-radius: defaultRadius;
+    font-size: 1rem;
+    padding:.5em .7em
+}
+
+@media (max-width:mediaQuery ) {
+    .box{
+        width: 19rem;
+    }
+}
