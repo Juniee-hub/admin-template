@@ -1,0 +1,20 @@
+@value boxDark from '../../../../common/colors.css';
+@value defaultRadius from '../../../../common/variable.css';
+.wrap{
+    position: fixed;
+    right: 0;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    bottom: 50vh;
+    display: flex;
+    gap: 7px;
+}
+
+.wrap button{
+    border:0;
+    color: #fff;
+    padding:.5em;
+    background-color: boxDark;
+    border-radius: defaultRadius;
+    cursor: pointer;
+}

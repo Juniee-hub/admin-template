@@ -1,0 +1,13 @@
+@value boxDark from '../../../common/colors.css';
+@value defaultRadius from '../../../common/variable.css';
+
+.wrap{
+    background-color: boxDark;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    height: 4rem;
+    padding:1rem;
+    position: sticky;
+    top: 0;
+}

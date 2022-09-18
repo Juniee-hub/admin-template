@@ -3,21 +3,32 @@ import { useRouter } from 'next/router'
 import { getCookie } from 'cookies-next'
 
 import { adminAuthStore } from '../../store/adminAuth'
+import AdminHeader        from '../../components/webmaster/header/header'
+import AdminLeftPanel     from '../../components/webmaster/pannels/leftPanels/leftPanel'
+import AdminRightPanel    from '../../components/webmaster/pannels/rightPanels/rightPanel'
+import AdminDashboard     from '../../components/webmaster/dashboard/dashboard'
+import useTheme           from '../../hooks/useTheme'
+import AdminBottomPanel   from '../../components/webmaster/pannels/bottomPanels/bottomPanel'
 
 const AdminMain = () => {
 
     const { isLogin, changeLogin } = adminAuthStore(state => state)
     const router = useRouter()
+    useTheme()
 
     return (
         <>
-            <h1>여긴 관리자 메인페이지</h1>
-            <button
-                onClick={changeLogin}
-            >
-                {isLogin ? '로그아웃' : '로그인'}
-            </button>
+            <div className={'flex-row'}>
+                <AdminLeftPanel/>
+                <div className={'flex-column max-height'}>
+                    <AdminHeader/>
+                    <AdminDashboard/>
+                    <AdminBottomPanel/>
+                </div>
+            </div>
+            <AdminRightPanel/>
         </>
+
     )
 }
 

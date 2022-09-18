@@ -1,0 +1,8 @@
+@value backDark,backWhite from './colors.css';
+
+.darkWrap{
+    background-color: backDark;
+}
+.whiteWrap{
+    background-color: backWhite;
+}

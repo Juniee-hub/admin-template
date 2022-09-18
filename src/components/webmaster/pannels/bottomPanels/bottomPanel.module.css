@@ -1,0 +1,11 @@
+@value boxDark from '../../../../common/colors.css';
+@value defaultRadius from '../../../../common/variable.css';
+
+.wrap{
+    background-color: boxDark;
+    padding:1rem;
+}
+
+.wrap span{
+    color: #fff;
+}

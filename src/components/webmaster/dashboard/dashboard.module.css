@@ -1,0 +1,31 @@
+@value makerGreen,boxDark from '../../../common/colors.css';
+@value defaultRadius from '../../../common/variable.css';
+.wrap{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding:1rem 5rem;
+    gap: 1rem;
+}
+
+.boxWrap{
+    background-color: boxDark;
+    border-radius: defaultRadius;
+    padding:1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.boxWrap > div{
+    border:1px dashed makerGreen;
+    border-radius: defaultRadius;
+    width: calc(50% - 1rem);
+    padding:1em;
+}
+
+.boxWrap > div:hover{
+    cursor: pointer;
+}
