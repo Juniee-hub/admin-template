@@ -1,4 +1,4 @@
-@value boxDark from '../../../common/colors.css';
+@value backDark,boxDark,textBlue,boxDark_2 from '../../../common/colors.css';
 @value defaultRadius from '../../../common/variable.css';
 
 .wrap{
@@ -10,4 +10,59 @@
     padding:1rem;
     position: sticky;
     top: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrap nav{
+    display: inline-flex;
+    gap: .5rem;
+}
+
+.wrap nav ul,
+.wrap nav ul li{
+    border-bottom:0;
+    border-radius: defaultRadius;
+}
+.wrap nav div{
+    cursor: pointer;
+}
+
+.info{
+}
+.info > div:first-child{
+    cursor: pointer;
+}
+
+.profile{
+    position: fixed;
+    top:4rem;
+    right: 1rem;
+    animation: fadeInUp .7s;
+    border-radius: defaultRadius;
+    background-color: boxDark_2;
+    padding:1rem;
+    z-index: 110;
+}
+
+.layer{
+    cursor: initial;
+    z-index: 100;
+    position: fixed;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform:translate3d(0rem, 4rem, 0px);
+    }
+    to {
+        opacity: 1;
+        transform:translate3d(0rem, 0rem, 0px);
+    }
 }
