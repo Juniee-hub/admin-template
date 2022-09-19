@@ -1,6 +1,6 @@
 @value boxDark from '../../../../common/colors.css';
 @value defaultRadius from '../../../../common/variable.css';
-.wrap{
+.wrap {
     position: fixed;
     right: 0;
     transform: rotate(90deg);
@@ -10,11 +10,28 @@
     gap: 7px;
 }
 
-.wrap button{
-    border:0;
+.wrap button {
+    border: 0;
     color: #fff;
-    padding:.5em;
+    padding: .5em;
     background-color: boxDark;
     border-radius: defaultRadius;
     cursor: pointer;
+}
+
+.layer {
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    animation: fade-in .3s ease-in-out 1;
+}
+
+@keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
 }

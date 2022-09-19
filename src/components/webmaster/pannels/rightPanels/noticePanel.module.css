@@ -1,0 +1,51 @@
+@value boxDark,darkBorder,makerGreen from '../../../../common/colors.css';
+@value defaultRadius from '../../../../common/variable.css';
+
+.wrap{
+    width: 300px;
+    position: fixed;
+    display: flex;
+    right: 0;
+    height: 100%;
+    background-color: boxDark;
+    z-index: 110;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fade-in .3s ease-in-out 1;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem 2rem;
+
+    height: 70px;
+    border-bottom: 1px solid darkBorder;
+}
+.header > *{
+    color: #fff;
+}
+
+.header > span{
+    cursor: pointer;
+}
+
+.boxWrap{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #fff;
+    padding:1rem;
+}
+.box{
+    border:1px dashed makerGreen;
+    border-radius: defaultRadius;
+    padding:1em;
+}
+
+
+@keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
+}
