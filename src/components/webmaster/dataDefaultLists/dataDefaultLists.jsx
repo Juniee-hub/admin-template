@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import Hangul                                 from 'hangul-js'
 
 import styles              from './dataDefaultLists.module.css'
 import AdminDefaultDataRow from './dataDefaultRow'
@@ -54,10 +55,31 @@ const AdminDataDefaultLists = ({ title }) => {
     })
     columns = [...new Set(tmpColumns)]
 
+
+    const [listData, setListData] = useState([])
     const searchRef = useRef(null)
     useEffect(() => {
         searchRef.current.focus()
+        setListData([...apiData])
     }, [])
+
+    /**
+     * 현재 목록 중 검색
+     * @Todo API 연동시 query 재 전송으로 변경필요
+     */
+    const dataSearching = (e) => {
+        const inputVal = e.target.value
+        if(!inputVal) {
+            setListData([...apiData])
+            return false
+        }
+        const filterData = apiData.filter(data=>{
+            const {name,address,age} = data
+            const searcher = new Hangul.Searcher(inputVal)
+            return (searcher.search(address.toLowerCase()) !== -1) || (searcher.search(age.toString()) !== -1) || (searcher.search(name.toLowerCase()) !== -1)
+        })
+        setListData([...filterData])
+    }
 
     const handleDataFetch = (pageInfo) => {
         console.log('전달받은 pageInfo', pageInfo)
@@ -69,7 +91,7 @@ const AdminDataDefaultLists = ({ title }) => {
             <h2>{title}</h2>
 
             <article className={styles.header}>
-                <input placeholder={'검색'} ref={searchRef}/>
+                <input placeholder={'이름 or 나이 or 주소 검색'} ref={searchRef} onChange={dataSearching}/>
                 <button>등록</button>
             </article>
 
@@ -87,7 +109,7 @@ const AdminDataDefaultLists = ({ title }) => {
 
                     <tbody>
                         {
-                            apiData.map((data, index) =>
+                            listData.map((data, index) =>
                                 <AdminDefaultDataRow key={`data_${index}`} data={data} columns={columns}/>
                             )
                         }

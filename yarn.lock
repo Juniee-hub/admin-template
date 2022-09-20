@@ -2369,6 +2369,11 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.npmjs.org/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
+hangul-js@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/hangul-js/-/hangul-js-0.2.6.tgz#3e552e3a68c76498cf2c7993ca354af7bad4730d"
+  integrity sha512-48axU8LgjCD30FEs66Xc04/8knxMwCMQw0f67l67rlttW7VXT3qRJgQeHmhiuGwWXGvSbk6YM0fhQlcjE1JFQA==
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz"
