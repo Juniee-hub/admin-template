@@ -1,0 +1,29 @@
+@value makerGreen,boxDark,inputDark,textDark,makerLightGrey,textBlue from '../../../common/colors.css';
+@value defaultRadius from '../../../common/variable.css';
+
+.wrap{
+    display: flex;
+    margin-top: 1em;
+}
+
+.wrap ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.wrap span{
+    padding:2px 10px;
+    border:1px solid makerLightGrey;
+    border-radius: defaultRadius;
+    cursor: pointer;
+}
+
+.wrap span.active{
+    background-color: #00adb5;
+}
+
+.wrap span.not{
+    cursor: not-allowed;
+}

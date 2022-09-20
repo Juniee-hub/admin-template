@@ -1,0 +1,51 @@
+@value makerGreen,boxDark,inputDark,textDark from '../../../common/colors.css';
+@value defaultRadius from '../../../common/variable.css';
+
+.wrap{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding:1rem 5rem;
+    gap: 1rem;
+}
+
+.wrap article{
+    background-color: boxDark;
+    border-radius: defaultRadius;
+    padding: 1rem;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header input{
+    background-color: inputDark;
+    border: 1px solid inputDark;
+    color: textDark;
+    border-radius: defaultRadius;
+    padding: .7rem 1.7rem;
+    font-size: 1rem;
+}
+.header button{
+    color: #fff;
+    border-radius: defaultRadius;
+    background-color: #00adb5;
+    padding: .7rem 1.7rem;
+}
+
+
+.table{
+    width: 100%;
+}
+
+.table th,
+.table td{
+    border-bottom: 1px dashed #6f6c6c;
+    text-align: center;
+    padding:1rem .5rem;
+}
+.table tr:last-child td{
+    border-bottom: 0;
+}

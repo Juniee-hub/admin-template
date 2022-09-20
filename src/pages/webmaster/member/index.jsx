@@ -1,10 +1,11 @@
-import React from 'react'
+import React         from 'react'
+import { getCookie } from 'cookies-next'
 
-import AdminHeader     from '../../../components/webmaster/header/header'
-import AdminRightPanel from '../../../components/webmaster/pannels/rightPanels/rightPanel'
-import AdminLeftPanel  from '../../../components/webmaster/pannels/leftPanels/leftPanel'
-import useTheme        from '../../../hooks/useTheme'
-import { getCookie }   from 'cookies-next'
+import AdminHeader           from '../../../components/webmaster/header/header'
+import AdminRightPanel       from '../../../components/webmaster/pannels/rightPanels/rightPanel'
+import AdminLeftPanel        from '../../../components/webmaster/pannels/leftPanels/leftPanel'
+import useTheme              from '../../../hooks/useTheme'
+import AdminDataDefaultLists from '../../../components/webmaster/dataDefaultLists/dataDefaultLists'
 
 const AdminMember = () => {
     useTheme()
@@ -14,6 +15,7 @@ const AdminMember = () => {
                 <AdminLeftPanel/>
                 <div className={'flex-column max-height'}>
                     <AdminHeader/>
+                    <AdminDataDefaultLists title={'회원 목록'}/>
                 </div>
             </div>
             <AdminRightPanel/>
