@@ -2,23 +2,14 @@ import React, { useState }                                  from 'react'
 import { Menu }                                             from 'antd'
 import { AppstoreOutlined, PoweroffOutlined, UserOutlined } from '@ant-design/icons'
 import { removeCookies }                                    from 'cookies-next'
-
-import styles        from './header.module.css'
 import { useRouter } from 'next/router'
+
+import { getItem } from '../../../service/customFunction'
+import styles      from './header.module.css'
 
 const AdminHeader = () => {
 
     const [hoverProfile, setHoverProfile] = useState(false)
-
-    const getItem = (label, key, icon, children, type) => {
-        return {
-            key,
-            icon,
-            children,
-            label,
-            type,
-        }
-    }
     const items = [
         getItem('회원', 'sub2', <AppstoreOutlined/>, [
             getItem('회원 목록', '5'),
