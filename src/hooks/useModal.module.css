@@ -1,0 +1,46 @@
+@value makerGrey from '../common/colors.css';
+@value mediaQuery from '../common/size.css';
+.wrap{
+
+}
+
+.wrap h2{
+    color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    color: initial;
+}
+
+.messageBox{
+    flex:1;
+    min-height: 7rem;
+    min-width: 30vw;
+    padding: 1rem;
+}
+
+.buttonWrap{
+    border-top: 1px solid makerGrey;
+    display: flex;
+    justify-content: flex-end;
+    height: 3rem;
+    padding: .3em;
+    gap: .5rem;
+}
+.buttonWrap button{
+    padding: .5em;
+    border-radius: mediaQuery;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+
+.buttonWrap button:first-child{
+    background-color: #00adb5;
+}
+
+.buttonWrap button:last-child{
+    background-color: tomato;
+}
