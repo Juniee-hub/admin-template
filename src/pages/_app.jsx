@@ -1,4 +1,3 @@
-import '../App.css'
 import Head               from 'next/head'
 import { ModalContainer } from 'reoverlay'
 

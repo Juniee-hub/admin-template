@@ -4,6 +4,7 @@ import Hangul                                 from 'hangul-js'
 import styles              from './dataDefaultLists.module.css'
 import AdminDefaultDataRow from './dataDefaultRow'
 import AdminDefaultPaging  from './defaultPaging'
+import { useRouter }       from 'next/router'
 
 const AdminDataDefaultLists = ({ title }) => {
 
@@ -85,6 +86,8 @@ const AdminDataDefaultLists = ({ title }) => {
         console.log('전달받은 pageInfo', pageInfo)
     }
 
+    const router = useRouter()
+
     return (
         <section className={styles.wrap}>
 
@@ -92,7 +95,7 @@ const AdminDataDefaultLists = ({ title }) => {
 
             <article className={styles.header}>
                 <input placeholder={'이름 or 나이 or 주소 검색'} ref={searchRef} onChange={dataSearching}/>
-                <button>등록</button>
+                <button onClick={() => {router.push('/webmaster/member/form')}}>등록</button>
             </article>
 
             <article>
